@@ -1,0 +1,25 @@
+package Lesson13;
+/*
+ * Lesson 13 Coding Activity 1 
+ * Take input of an integer number from the keyboard 
+ * and print "Positive" if it's positive or zero, and print "Negative" otherwise.
+ */
+
+
+import java.util.Scanner;
+
+
+class Lesson_13_Activity_One {
+    public static void main(String[] args)
+     {
+     Scanner scan = new Scanner (System.in);
+     int num = scan.nextInt();
+     
+     if(num>=0) {
+    	 System.out.println("Positive");
+     }
+     else {
+    	 System.out.println("Negative");
+     }
+    }
+}
