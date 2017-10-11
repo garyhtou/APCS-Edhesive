@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-<?xml version="1.0" encoding="UTF-8"?>
+HEAD<?xmHEADsion="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>APCS</name>
 	<comment></comment>
@@ -33,5 +32,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-</projectDescription>
->>>>>>> branch 'master' of https://github.com/garytou2/APCS-Edhesive
+</projectDescription>branch 'master' of https://github.com/garytou2/APCS
