@@ -5,7 +5,7 @@ public class java_test {
 		int a = 7;
 		while (a < 15) {
 		    a += a % 4;
-		    System.out.print(a + "   ");
+		    System.out.print(a + "   hey!");
 		}
 
 	}
