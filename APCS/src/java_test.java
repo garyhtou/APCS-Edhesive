@@ -2,11 +2,13 @@
 public class java_test {
 
 	public static void main(String[] args) {
-		int a = 7;
-		while (a < 15) {
-		    a += a % 4;
-		    System.out.print(a + "   hey");
-		}
+		int i = 0;
+		
+		for (i = 0; i < 2; i++)
+		{
+			 int f = 2;		}
+		
+		System.out.println(i);
 
 	}
 
