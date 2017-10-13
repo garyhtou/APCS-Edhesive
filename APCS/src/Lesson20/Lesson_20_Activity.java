@@ -74,7 +74,8 @@ import java.lang.Math;
 
 class Lesson_20_Activity{
 	public static void main(String[] args) {
-		/* SUDO
+		/*PSEUDO CODE
+		 * 
 		 * import Java.lang.Math (for abs)
 		 * int maxNorth,maxSouth,maxEast,maxWest
 		 * 
@@ -114,8 +115,8 @@ class Lesson_20_Activity{
 		 *      Farthest East: maxEast
 		 *      Farthest West: maxWest
 		 * 
-		 * 			
 		 */
+		
 		
 		
 		
