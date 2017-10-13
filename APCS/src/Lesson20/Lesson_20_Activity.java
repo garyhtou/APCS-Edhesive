@@ -69,56 +69,107 @@ package Lesson20;
  *   
  */ 
 
+
 import java.util.Scanner;
 import java.lang.Math; 
 
 class Lesson_20_Activity{
 	public static void main(String[] args) {
-		/*PSEUDO CODE
-		 * 
-		 * import Java.lang.Math (for abs)
-		 * int maxNorth,maxSouth,maxEast,maxWest
-		 * 
-		 * print ("Please enter the latitude:")
-		 * Scan for latitude
-		 * print ("Please enter the longitude:")
-		 * Scan for longitude
-		 * int cont = 1
-		 * 
-		 * while (cont = 1)
-		 * 		int incorrect = 0
-		 * 		if (longitude >=-90 && longitude <=90)
-		 * 			if(longitude > 0 && longitude > maxNorth)
-		 * 				maxNorth = longitude
-		 * 			else if(longitude <=0 && longitude < maxSouth)
-		 * 				maxSouth = (Math.abs(longitude))
-		 * 		else
-		 * 			incorrect = 1
-		 * 
-		 * 		if (latitude >=-90 && latitude <=90)
-		 * 			if(latitude > 0 && latitude > maxEast)
-		 * 				maxEast = longitude
-		 * 			else if(latitude <=0 && latitude < maxSouth)
-		 * 				maxWest = (Math.abs(latitude))
-		 * 		else
-		 * 			incorrect = 1
-		 * 
-		 * 		if (incorrect == 1)
-		 * 			print ("Incorrect Latitude or Longitude")
-		 * 
-		 * 		print("Would you like to enter another location?")
-		 * 		scan for cont
-		 * 
-		 * print:
-		 * 		Farthest North: maxNorth
-		 *      Farthest South: maxSouth
-		 *      Farthest East: maxEast
-		 *      Farthest West: maxWest
-		 * 
-		 */
+		
+		Scanner scan = new Scanner (System.in);
+		
+		double longitude, latitude;
+		double maxNorth=0,maxSouth=0,maxEast=0,maxWest=0;
+		double cont = 1;
+		
+		int incorrect = 0; //1=incorrect
+		
+
 		
 		
+		System.out.println("Please enter the latitude:");
+		latitude = scan.nextDouble();
+		System.out.println("Please enter the longitude:");
+		longitude = scan.nextDouble();
+		
+		//intital Longitude		
+		if (longitude >=-180 && longitude <=180) {
+		  	maxEast = longitude;
+		  	maxWest = longitude;
+		}
+		else {
+			incorrect = 1;
+		}
+
+		//intial Latitude
+		if (latitude >=-90 && latitude <=90) {
+	  		maxNorth = latitude;
+	  		maxSouth = latitude;
+	  	}
+		else {
+			incorrect = 1;
+		}
+	  	
+		//Checks for incorrect longitude or latiude
+		if (incorrect == 1) {
+			System.out.println("Incorrect Latitude or Longitude");
+			incorrect = 0;
+		}
+		else {
+		System.out.println("Would you like to enter another location?");
+		cont = scan.nextDouble();
+		}
 		
 		
+		while (cont == 1) {
+			
+			System.out.println("Please enter the latitude:");
+			latitude = scan.nextDouble();
+			System.out.println("Please enter the longitude:");
+			longitude = scan.nextDouble();
+			
+			//Longitude		
+			if (longitude >=-180 && longitude <=180) {
+				if(longitude > maxEast) {
+			  		maxEast = longitude;
+				}
+				if(longitude < maxWest) {
+			  		maxWest = longitude;
+				}
+			}
+			else {
+			  	incorrect = 1;
+			} 
+			//Latitude
+			if (latitude >=-90 && latitude <=90) {
+		  		if(latitude > maxNorth) {
+		  			maxNorth = latitude;
+		  		}
+		  		if(latitude < maxSouth) {
+		  			maxSouth = latitude;
+		  		}
+			}
+		  	else {
+		  		incorrect = 1;
+		  	}
+			//Checks for incorrect longitude or latiude
+			if (incorrect == 1) {
+				System.out.println("Incorrect Latitude or Longitude");
+				incorrect = 0;
+			}
+			else {
+			System.out.println("Would you like to enter another location?");
+			cont = scan.nextDouble();
+			}
+		}
+		
+		
+		System.out.println("Farthest North: " + maxNorth);
+		System.out.println("Farthest South: "+maxSouth);
+		System.out.println("Farthest East: "+maxEast);
+		System.out.println("Farthest West: "+maxWest);
+		
+		scan.close();
+	
 	}
 }
