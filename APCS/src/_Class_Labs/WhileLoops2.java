@@ -1,4 +1,4 @@
-package _Class_Work.Class_Labs;
+package _Class_Labs;
 
 import java.lang.Math;
 
