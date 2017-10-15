@@ -2,7 +2,7 @@ package Assignments;
 
 import java.util.Scanner;
 
-public class Crack_the_Code {
+public class Crack_the_Code_3 {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner (System.in);

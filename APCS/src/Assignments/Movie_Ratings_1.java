@@ -1,7 +1,7 @@
 package Assignments;
 import java.util.Scanner; 
   
-public class Movie_Ratings { 
+public class Movie_Ratings_1 { 
   
     public static void main(String[] args) { 
          

@@ -2,13 +2,12 @@
 public class java_test {
 
 	public static void main(String[] args) {
-		int i = 0;
+		String a = "hello";
+		String b = "hi";
 		
-		for (i = 0; i < 20; i++)
-		{
-			 int f = 2;		}
+		int test = a.compareTo(b);
 		
-		System.out.println(i);
+		System.out.println(test);
 
 	}
 
