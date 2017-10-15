@@ -4,7 +4,7 @@ public class java_test {
 	public static void main(String[] args) {
 		int i = 0;
 		
-		for (i = 0; i < 2; i++)
+		for (i = 0; i < 20; i++)
 		{
 			 int f = 2;		}
 		
