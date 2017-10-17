@@ -1,7 +1,6 @@
 package Assignments;
 import java.util.Scanner;
 
-//NOT DONE
 
 public class Alien_Message_Board_4 {
 	
@@ -18,6 +17,9 @@ public class Alien_Message_Board_4 {
 	
 	public static void main(String[] args) {
 		//System.out.println(message);
+		
+		
+		
 		
 		String splitString = message;
 		
