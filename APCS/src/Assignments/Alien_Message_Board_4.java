@@ -59,10 +59,10 @@ public class Alien_Message_Board_4 {
 	
 	public static void printStats() {
 		if(!swear) {
-			System.out.println("CLEAN");
+			System.out.println("Results:\nCLEAN");
 		}
 		else {
-			System.out.println("BAD");
+			System.out.println("Results:\nBAD");
 			System.out.println(username);
 			
 			System.out.println("^^: " + swear1);
