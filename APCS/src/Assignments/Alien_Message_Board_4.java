@@ -27,7 +27,19 @@ public class Alien_Message_Board_4 {
 			
 			while (splitString.indexOf(' ') > -1) {
 				String currentWord = splitString.substring(0, splitString.indexOf(' '));
-				checkSwear(currentWord);
+				//checkSwear(currentWord);
+				if ((currentWord.compareTo("^^")) == 0) {
+					swear1++;
+					swear = true;
+				}
+				if ((currentWord.compareTo("QEY") == 0)) {
+					swear2++;
+					swear = true;
+				}
+				if ((currentWord.compareTo("$")) == 0) {
+					swear3++;
+					swear = true;
+				}
 				splitString = splitString.substring(splitString.indexOf(' ')+1);
 			}
 			
@@ -57,6 +69,7 @@ public class Alien_Message_Board_4 {
 			swear3++;
 			swear = true;
 		}
+		
 
 	}
 	
