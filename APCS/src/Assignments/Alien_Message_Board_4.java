@@ -16,30 +16,14 @@ public class Alien_Message_Board_4 {
 	
 	
 	public static void main(String[] args) {
-		//System.out.println(message);
-		
-		
-		
-		
 		String splitString = message;
 		
 		if(splitString.indexOf(' ') > -1) {
 			
 			while (splitString.indexOf(' ') > -1) {
 				String currentWord = splitString.substring(0, splitString.indexOf(' '));
-				//checkSwear(currentWord);
-				if ((currentWord.compareTo("^^")) == 0) {
-					swear1++;
-					swear = true;
-				}
-				if ((currentWord.compareTo("QEY") == 0)) {
-					swear2++;
-					swear = true;
-				}
-				if ((currentWord.compareTo("$")) == 0) {
-					swear3++;
-					swear = true;
-				}
+				checkSwear(currentWord);
+				
 				splitString = splitString.substring(splitString.indexOf(' ')+1);
 			}
 			
