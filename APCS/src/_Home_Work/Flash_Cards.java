@@ -14,11 +14,23 @@ public class Flash_Cards {
 	
 		System.out.println("How many Flash Cards would you like to make?");
 		int numOfCards = scan.nextInt();
+		if(numOfCards == 0) {
+			System.out.println("Hm, why are you even using this program if you need \"0\" Flash Cards");
+			System.exit(0);
+		}
+		else if(numOfCards<0) {
+			System.out.println("Hm, i'm pretty sure it isn't possible to have \"" + numOfCards +"\" Flash Cards");
+			System.exit(0);
+		}
+		
+		
 		String[] side1 = new String[numOfCards];
 		String[] side2 = new String[numOfCards];
 		
+		
+			scan.nextLine();
 		for (int i = 1; i <= numOfCards; i++) {
-		//int i = 1;
+			
 			System.out.println("Please enter side ONE of the " + i + numEnding(i) + " Flash Card");
 			side1[i-1]=scan.nextLine();
 			
@@ -43,6 +55,7 @@ public class Flash_Cards {
 			}
 			else {
 				System.out.println("Invalid, please enter \"Side One\"  or  \"Side Two\".");
+				quizSide = 0;
 			}
 		}
 		
