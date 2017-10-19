@@ -39,6 +39,7 @@ public class Alien_Message_Board_4 {
 		printStats();
 	}
 	
+
 	public static void checkSwear(String checkSwearMessage) {
 		//System.out.println(checkSwearMessage);
 		if ((checkSwearMessage.compareTo("^^")) == 0) {
