@@ -3,10 +3,10 @@ package _Home_Work;
 import java.util.Scanner;
 import java.lang.Math;
 
-import _Interfaces.IC_General;
+//import _Interfaces.IC_General;
 
 	
-public class Flash_Cards extends IC_General{
+public class Flash_Cards /*extends IC_General*/{
 	
 	public static void main(String[] args) {
 		Scanner scan = new Scanner (System.in);
@@ -128,8 +128,7 @@ public class Flash_Cards extends IC_General{
 						System.out.println("Maybe you'll have better lucky next time!");
 					}
 					
-					//TODO PERCENT NOT WROKING, 4/12 NOT 0%
-					System.out.println("\nYou got " + correctAnswers + " out of " + answered + ".\t " + (correctAnswers/answered) + "%.");
+					System.out.println("\nYou got " + correctAnswers + " out of " + answered + ".\t " + (int)((double)correctAnswers/answered*100) + "%.");
 					
 					//MOST OFTEN MISSED
 					
@@ -158,14 +157,14 @@ public class Flash_Cards extends IC_General{
 						}
 					
 					// TODO NOT WORKING
-					if(wrong[most_missed_2]==0) {
-						System.out.println(side1[most_missed_1]);
+					if(wrong[most_missed_3]>0) {
+						System.out.println(side1[most_missed_1] + ", " + side1[most_missed_2] + ", " + side1[most_missed_3]);
 					}
-					else if(wrong[most_missed_3]==0) {
+					else if(wrong[most_missed_2]>0) {
 						System.out.println(side1[most_missed_1] + ", " + side1[most_missed_2]);
 					}
 					else {
-					System.out.println(side1[most_missed_1] + ", " + side1[most_missed_2] + ", " + side1[most_missed_3]);
+						System.out.println(side1[most_missed_1]);
 					}	
 						
 					}
@@ -184,22 +183,28 @@ public class Flash_Cards extends IC_General{
 					
 					
 					System.out.println("\nWould you like to play again?  Please enter \"Yes\" or \"No\"");
-					String playAgain = scan.nextLine();
+					String playAgain;
+					boolean changed = false;
+					while (!changed) {
+					playAgain = scan.nextLine();
 					playAgain = playAgain.toUpperCase();
 					if(playAgain.compareTo("YES")==0) {
 						cont = true;
 						answered = 0;
 						correctAnswers = 0;
+						changed = true;
 					}
 					else if (playAgain.compareTo("NO")==0) {
 						cont = false;
 						answered = 0;
 						correctAnswers = 0;
+						changed = true;
 					}
 					else {
 						System.out.println("Invalid, please enter \"Yes\"  or  \"No\".");
+						changed = false;
 					}
-					
+					}
 				}
 				else {
 					if(UIresponce.compareTo(side2[randomCard])==0) {
