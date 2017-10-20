@@ -17,11 +17,13 @@ public class Flash_Cards /*extends IC_General*/{
 		int numOfCards = scan.nextInt();
 		if(numOfCards == 0) {
 			System.out.println("Hm, why are you even using this program if you need \"0\" Flash Cards");
-			System.exit(0);
+			throw new IllegalArgumentException("You can't put in 0 Flash Cards");
+			//System.exit(0);
 		}
 		else if(numOfCards<0) {
 			System.out.println("Hm, i'm pretty sure it isn't possible to have \"" + numOfCards +"\" Flash Cards");
-			System.exit(0);
+			throw new IllegalArgumentException("You can't put in 0 Flash Cards");
+			//System.exit(0);
 		}
 		
 		
