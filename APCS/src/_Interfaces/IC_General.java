@@ -16,7 +16,9 @@ public class IC_General implements I_General {
 	public static final String ANSI_CYAN = "\u001B[36m";
 	public static final String ANSI_WHITE = "\u001B[37m";*/
 
-	
+	public static void main(String[] args) {
+		System.out.println("Asfasdf");
+	}
 	
 	public static final IC_General g = new IC_General();
 	
