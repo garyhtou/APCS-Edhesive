@@ -1,10 +1,12 @@
-package _Home_Work;
+package _Home_Projects;
 
 import javax.swing.*;  
 import java.awt.*;  
 import java.awt.event.*;  
 
-public class Graphics extends Frame implements ActionListener{  
+//http://zetcode.com/tutorials/javaswingtutorial/firstprograms/
+
+public class Graphics extends JFrame implements ActionListener{  
     JTextField tf; JLabel l; JButton b;  
     Graphics(){  
         tf=new JTextField();  

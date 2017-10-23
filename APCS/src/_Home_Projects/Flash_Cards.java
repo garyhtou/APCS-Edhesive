@@ -1,4 +1,4 @@
-package _Home_Work;
+package _Home_Projects;
 
 import java.util.Scanner;
 import java.lang.Math;
