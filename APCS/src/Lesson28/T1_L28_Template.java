@@ -18,6 +18,7 @@ public class T1_L28_Template{
           String movies [] = new String [5];
           
           movies[0] = "Creature of the Black Lagoon";
+          movies[2] = "Don't Eat the Daisies";
           
           for(int i = 0; i <movies.length; i++) {
         	  System.out.println(movies[i]);

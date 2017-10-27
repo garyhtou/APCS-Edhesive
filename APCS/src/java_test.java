@@ -10,7 +10,11 @@ public class java_test{
 	
 	public static void test() {
 		
-
+		
+		
+		
+		
+		
 		
 	}
 
