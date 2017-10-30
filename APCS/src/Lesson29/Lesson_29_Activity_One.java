@@ -30,13 +30,17 @@ class Lesson_29_Activity_One {
    */
   public static String [] list = {};
   
-    public static void main(String[] args)
-     {
-/*
- * Write your code here
- * Copy and paste your entire program to Code Runner
- * to complete the activity, from the first import statement
- * to the last bracket.
- */
-}
+    public static void main(String[] args) {
+    	int longest = 0;
+    	for(int i = 1; i < list.length; i++) {
+    		if(list[i].length()>longest) {
+    			longest = i;
+    		}
+    	}
+    	System.out.println("Hardest word: " + list[longest]);
+    	
+    	
+    	
+    	
+    }
 }
