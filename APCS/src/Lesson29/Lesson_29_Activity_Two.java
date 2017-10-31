@@ -29,15 +29,27 @@ class Lesson_29_Activity_Two {
    * print values from list, but do not add or remove values to this 
    * variable.  
    */
-    public static String [] list = {};
+    public static String [] list = {"every", "nearing", "checking", "food", "stand", "value"};
     
-    public static void main(String[] args)
-     {
-/*
- * Write your code here
- * Copy and paste your entire program to Code Runner
- * to complete the activity, from the first import statement
- * to the last bracket.
- */
-}
+    public static void main(String[] args) {
+    	
+    	//for loop for each word & next line
+    		//for loop for reverse
+    	
+    	
+    	for(int i = 0; i < list.length; i++) {
+    		
+    		for(int k = list[i].length()-1; k >= 0; k--) {
+    			System.out.print(list[i].substring(k, k+1));
+    			
+    			
+    		}
+    		
+    		System.out.println("");
+    	}
+    	
+    	
+    	
+    	
+    }
 }

@@ -21,23 +21,19 @@ import java.util.Scanner;
 import java.lang.Math; 
 
 class Lesson_29_Activity_One {
-  
-  /* Fill this list with values that will be useful for you to test. 
-   * A good idea may be to copy/paste the list in the example above. 
-   * Do not make any changes to this list in your main method. You can 
-   * print values from list, but do not add or remove values to this 
-   * variable. 
-   */
-  public static String [] list = {};
-  
+	
+	public static String [] list = {};
+
     public static void main(String[] args) {
+    	
     	int longest = 0;
-    	for(int i = 1; i < list.length; i++) {
-    		if(list[i].length()>longest) {
+    	
+    	for(int i = 0; i < list.length; i++) {
+    		if(list[i].length()>list[longest].length()) {
     			longest = i;
     		}
     	}
-    	System.out.println("Hardest word: " + list[longest]);
+    	System.out.println(list[longest]);
     	
     	
     	
