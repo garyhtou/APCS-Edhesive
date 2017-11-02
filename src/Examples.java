@@ -10,7 +10,7 @@ public class Examples{
 	
 	public static void ReverseStringArray() {
 		
-		//Use string builder to reverse a string
+		//Use StringBuilder to reverse a string
 		
 		String list [] = {"every", "nearing", "checking", "food", "stand", "value"};
 		
