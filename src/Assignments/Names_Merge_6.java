@@ -88,15 +88,15 @@ public class Names_Merge_6 {
 		arrayOne = entryCode(1);
 		arrayTwo = entryCode(2);
 		*/
-		merge(entryCode(1), entryCode(2));
+		merge(entryArray(1), entryArray(2));
 	}
 	
 //ENTRYCODE
-	public static String[] entryCode(int arrayNum) {
+	public static String[] entryArray(int arrayNum) {
 		boolean continue_entry = true; //flag varible
 		int elementNum = 0;
 		String text = null;
-		String last_entry = null;
+		String last_entry = "";
 		String[] array = new String[10000];
 		if(arrayNum == 1) {
 			text = "first";
@@ -131,24 +131,30 @@ public class Names_Merge_6 {
 		String[] mergedArray = new String[20000]; //20,000 because if arrayOne has 10,000 and arrayTwo has 10,000.  Combined will be 20,000
 		int elementNumOne = 0;
 		int elementNumTwo = 0;
-		int arrayElement = 0;
+		int elementNumMerged = 0;
 		
+		System.out.println("BEFORE MERGE");
 		//TODO review how compareTo works, does it compare this to var to var to this
 		while(elementNumOne<=10000 && elementNumTwo<=10000) {
 			if(arrayOne[elementNumOne].compareTo(arrayTwo[elementNumTwo])<=0) {
-				mergedArray[arrayElement] = arrayOne[elementNumOne];
-				arrayElement++;
+				System.out.println("INSIDE IF");
+				mergedArray[elementNumMerged] = arrayOne[elementNumOne];
+				elementNumMerged++;
+				elementNumOne++;
 			}
 			else{
-				mergedArray[arrayElement] = arrayTwo[elementNumOne];
-				arrayElement++;
+				System.out.println("INSIDE ELSE");
+				mergedArray[elementNumMerged] = arrayTwo[elementNumOne];
+				elementNumMerged++;
+				elementNumTwo++;
 			}
 		}
-		
-		print(arrayOne, 1);
+		System.out.println("REACHED PRINTING");
+		/*print(arrayOne, 1);
 		print(arrayTwo, 2);
-		print(mergedArray, 3);
+		print(mergedArray, 3);*/
 	}
+	
 	
 //PRINT
 	public static void print(String [] array, int arrayNum) { //This method prints out the merged array
