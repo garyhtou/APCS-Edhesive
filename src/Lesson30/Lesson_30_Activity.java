@@ -1,5 +1,4 @@
 package Lesson30;
-
 /*
  * Lesson 30 Coding Activity 
  * Due to a problem with a scanner an array of words was created 
@@ -22,21 +21,29 @@ package Lesson30;
 import java.util.Scanner;
 
 class Lesson_30_Activity {
-     
-   /*
-    * Your code should end with the following array modified as the 
-    * instructions above specify. You may modify the elements in 
-    * this list but make sure you do not add or remove anything from it. 
-   */
+
     public static String [] list = {};
   
-    public static void main(String[] args)
-     {
-     /*
-      * Write your code here
-      * Copy and paste your entire program to Code Runner
-      * to complete the activity, from the first import statement
-      * to the last bracket.
-      */
+    
+    
+    public static void main(String[] args) {
+    	
+    	//METHOD ONE
+    	/*String word = "";
+    	
+    	for(int i = 0; i < list.length; i++) {
+    		word="";
+    		for(int k = 0; k < list[i].length(); k++) {
+    			if(list[i].charAt(k) != ' ') {
+    				word+=list[i].charAt(k);
+    			}
+    		}
+    		list[i]=word;
+    	}*/
+    	
+    	//METHOD TWO
+    	for(int i = 0; i < list.length; i++) {
+    		list[i]=list[i].replaceAll(" ", "");
+    	}
     }
 }
