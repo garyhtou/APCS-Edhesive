@@ -28,27 +28,25 @@ import java.util.Scanner;
 class Lesson_33_Activity_Five {
 	public static void main(String[] args) {
 		int[] a  = {3, 4, 5, 6, 7};
-		insertValue(a, 100, 1);
+		insertValue(a, 100, 2);
 		
 	}
 	public static void insertValue(int[] array, int num, int index) {
 		int[] newarray = new int [array.length];
-		boolean needBreak = false;
 		for(int i = array.length-1; i >= 0; i--) {
 			if(i == index) {
 				newarray[i] = num;
-				break;
+			}
+			else if(i > index){
+				newarray[i] = array[i-1];
 			}
 			else {
-				if(!needBreak) {
-					newarray[i] = array[i-1];
-				}
+				newarray[i] = array[i];
 			}
 		}
 		for(int i = 0; i < array.length; i++) {
 			array[i] = newarray[i];
 		}
-		System.out.print(Arrays.toString(array));
-		//FIXME: not working
+		//System.out.print(Arrays.toString(array));
 	}
 }
