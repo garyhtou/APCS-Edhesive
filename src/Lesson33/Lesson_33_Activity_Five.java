@@ -22,14 +22,33 @@ package Lesson33;
  */
 
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 class Lesson_33_Activity_Five {
 	public static void main(String[] args) {
-		
+		int[] a  = {3, 4, 5, 6, 7};
+		insertValue(a, 100, 1);
 		
 	}
-	public static void random() {
-		
+	public static void insertValue(int[] array, int num, int index) {
+		int[] newarray = new int [array.length];
+		boolean needBreak = false;
+		for(int i = array.length-1; i >= 0; i--) {
+			if(i == index) {
+				newarray[i] = num;
+				break;
+			}
+			else {
+				if(!needBreak) {
+					newarray[i] = array[i-1];
+				}
+			}
+		}
+		for(int i = 0; i < array.length; i++) {
+			array[i] = newarray[i];
+		}
+		System.out.print(Arrays.toString(array));
+		//FIXME: not working
 	}
 }

@@ -26,7 +26,10 @@ class Lesson_33_Activity_Two {
 		
 		
 	}
-	public static void random() {
-		
+	public static void randomize(int[] array) {
+		for(int i = 0; i < array.length; i++) {
+			int randomNum = (int)(Math.random()*90+10);
+			array[i] = randomNum;
+		}
 	}
 }

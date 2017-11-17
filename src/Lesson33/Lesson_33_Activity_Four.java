@@ -24,7 +24,17 @@ class Lesson_33_Activity_Four {
 		
 		
 	}
-	public static void random() {
-		
+	public static void reverse(int[] array) {
+		int reversedArrayIndex = 0;
+		int[] reversedArray = new int [array.length];
+		for(int i = array.length-1; i >= 0; i--) {
+			reversedArray[reversedArrayIndex] = array[i];
+			reversedArrayIndex++;
+		}
+		reversedArrayIndex = 0;
+		for(int i = 0; i < array.length; i++) {
+			array[i] = reversedArray[reversedArrayIndex];
+			reversedArrayIndex++;
+		}
 	}
 }

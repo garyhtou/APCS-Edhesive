@@ -24,7 +24,11 @@ class Lesson_33_Activity_Three {
 		
 		
 	}
-	public static void random() {
-		
+	public static void printit(int[] array) {
+		String print = "";
+		for(int i = 0; i < array.length; i++) {
+			print += array[i] + " ";
+		}
+		System.out.println(print);
 	}
 }
