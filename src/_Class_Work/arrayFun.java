@@ -5,28 +5,34 @@ import java.util.*;
 public class arrayFun {
 
 	public static void main(String[] args) {
+		//ARRAYS
 		int[] array1 = {7, 4, 10, 0, 1, 7, 6, 5, 3, 2, 9, 7};
 		int[] array2 = {7, 4, 2, 7, 3, 4, 6, 7, 8, 9, 7, 0, 10, 7, 0, 1, 7, 6, 5, 7, 3, 2, 7, 9, 9, 8,7};
 		
-		//CALL METHODS HERE
-		sum(array1, 0, 5); //arrayName, startIndex, stopIndex
-		numCount(array2, 4); //arrayName, numToLookFor
-		delete(array2, 7); //arrayName, numToDelete
+		//SETTINGS: true = array1	false = array2
+		boolean whichArrayToUse = false;
+		
+		//PRINT
+		System.out.println(Arrays.toString(whichArrayToUse ? array1 : array2));
+		System.out.println(sum((whichArrayToUse ? array1 : array2), 3, 6)); //arrayName, startIndex, stopIndex
+		System.out.println(sum((whichArrayToUse ? array1 : array2), 2, 9)); //arrayName, startIndex, stopIndex
+		System.out.println();
+		System.out.println(numCount((whichArrayToUse ? array1 : array2), 4)); //arrayName, numToLookFor
+		System.out.println(numCount((whichArrayToUse ? array1 : array2), 9)); //arrayName, numToLookFor
+		System.out.println(numCount((whichArrayToUse ? array1 : array2), 7)); //arrayName, numToLookFor
+		System.out.println();
+		System.out.println(delete((whichArrayToUse ? array1 : array2), 7)); //arrayName, numToDelete
 		
 	}
-	public static void sum(int[] array, int start, int stop) {
-		System.out.println("SUM\n");
-		System.out.println("Starting Array:  " + Arrays.toString(array));
+	public static String sum(int[] array, int start, int stop) {
 		int sum = 0;
 		for(int i = start; i < array.length || i < stop; i ++) {
 			sum+=array[i];
 		}
 		String printHeader = "sum of spots " + start + "-" + stop + "  =  ";
-		System.out.println(printHeader + sum + "\n\n---------------");
+		return new String (printHeader + sum);
 	}
-	public static void numCount(int[] array, int num) {
-		System.out.println("NUMBER OF TIIMES AN ITEM IS IN THE ARRAY\n");
-		System.out.println("Starting Array:  " + Arrays.toString(array));
+	public static String numCount(int[] array, int num) {
 		int counter = 0;
 		for(int i = 0; i < array.length; i++) {
 			if(array[i] == num) {
@@ -34,11 +40,9 @@ public class arrayFun {
 			}
 		}
 		String printHeader = "# of " + num + "s  =  ";
-		System.out.println(printHeader + counter + "\n\n---------------");
+		return new String (printHeader + counter);
 	}
-	public static void delete(int[] array, int num) {
-		System.out.println("DELETE CERTAIN ITMES IN THE ARRAY\n");
-		System.out.println("Starting Array:  " + Arrays.toString(array));
+	public static String delete(int[] array, int num) {
 		//This is the same code as numCount
 		int numOfNum = 0;
 		for(int i = 0; i < array.length; i++) {
@@ -57,7 +61,7 @@ public class arrayFun {
 			}
 		}
 		String printHeader = "new array with all " + num + "s removed  =  ";
-		System.out.println(printHeader + Arrays.toString(newArray) + "\n---------------");
+		return new String (printHeader + Arrays.toString(newArray));
 	}
 
 }

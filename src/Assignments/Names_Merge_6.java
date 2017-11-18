@@ -82,13 +82,9 @@ public class Names_Merge_6 {
 	
 //ARRAY ENTRY
 	public static void arrayEntry() {
-		/*String[] arrayOne = new String[10000];
-		String[] arrayTwo = new String[10000];
-		
-		arrayOne = entryCode(1);
-		arrayTwo = entryCode(2);
-		*/
-		merge(entryArray(1), entryArray(2));
+		String[] arrayOne = entryArray(1);
+		String[] arrayTwo = entryArray(2);
+		merge(arrayOne, arrayTwo);
 	}
 	
 //ENTRYCODE
@@ -107,22 +103,43 @@ public class Names_Merge_6 {
 		
 		
 		System.out.println("Enter the values for the " + text + " array, up to 10000 values, enter 'End' to quit");
+		scan.next(); //tired using this to fix the next line program, doesn't work
 		while(continue_entry) {
-			String entry = scan.nextLine(); //scans for name
-			array[elementNum] = entry; //sets entry to it's element in the array
-			
+		    //FIXME: not working, Edhesive isn't showing a nextLine
+			String entry = "";
+		    if(scan.hasNextLine()){
+			    entry = scan.nextLine(); //scans for name
+		    }
+		    //
+		    
 			if(entry.toUpperCase().compareTo("END")==0) { //If entry is less than last entry or if is "END"
 				continue_entry = false;
 			}
-			if(entry.compareTo(last_entry)<0) {
-				incorrectOrder = true;
+			else {
+				array[elementNum] = entry; //sets entry to it's element in the array
+				
+				if(entry.compareTo(last_entry)<0) {
+					incorrectOrder = true;
+				}
+
+				last_entry = entry;
+				elementNum++;
 			}
-			last_entry = entry;
-			elementNum++;
 		}
 		
-		
-		
+		//correct case, HEy -> Hey
+		for(int i = 0; i < array.length; i++) {
+			if(array[i] == null) {
+				break;
+			}
+			else {
+				array[i] = array[i].trim();
+				String upper = array[i].toUpperCase();
+				String lower = array[i].toLowerCase();
+				String name = upper.substring(0, 1) + lower.substring(1);
+				array[i] = name;
+			}
+		}
 		return array;
 	}
 	
@@ -133,26 +150,41 @@ public class Names_Merge_6 {
 		int elementNumTwo = 0;
 		int elementNumMerged = 0;
 		
-		System.out.println("BEFORE MERGE");
 		//TODO review how compareTo works, does it compare this to var to var to this
 		while(elementNumOne<=10000 && elementNumTwo<=10000) {
-			if(arrayOne[elementNumOne].compareTo(arrayTwo[elementNumTwo])<=0) {
-				System.out.println("INSIDE IF");
-				mergedArray[elementNumMerged] = arrayOne[elementNumOne];
-				elementNumMerged++;
-				elementNumOne++;
+			if((arrayOne[elementNumOne] == null) && (arrayTwo[elementNumTwo] == null)) {
+				break;
 			}
-			else{
-				System.out.println("INSIDE ELSE");
-				mergedArray[elementNumMerged] = arrayTwo[elementNumOne];
-				elementNumMerged++;
-				elementNumTwo++;
+			else {
+				if((arrayOne[elementNumOne] != null) && (arrayTwo[elementNumTwo] != null)) {
+					if(arrayOne[elementNumOne].compareTo(arrayTwo[elementNumTwo])<=0) {
+						mergedArray[elementNumMerged] = arrayOne[elementNumOne];
+						elementNumMerged++;
+						elementNumOne++;
+					}
+					else{
+						mergedArray[elementNumMerged] = arrayTwo[elementNumTwo];
+						elementNumMerged++;
+						elementNumTwo++;
+					}
+				}
+				else if((arrayOne[elementNumOne] == null) && (arrayTwo[elementNumTwo] != null)) {
+					mergedArray[elementNumMerged] = arrayTwo[elementNumTwo];
+					elementNumMerged++;
+					elementNumTwo++;
+				}
+				else {
+					mergedArray[elementNumMerged] = arrayOne[elementNumOne];
+					elementNumMerged++;
+					elementNumOne++;
+				}
 			}
 		}
-		System.out.println("REACHED PRINTING");
-		/*print(arrayOne, 1);
+		
+		print(arrayOne, 1);
 		print(arrayTwo, 2);
-		print(mergedArray, 3);*/
+		print(mergedArray, 3);
+		System.out.print("\n\n" + (incorrectOrder ? "Error: Arrays not in correct order" : ""));
 	}
 	
 	
@@ -160,13 +192,13 @@ public class Names_Merge_6 {
 	public static void print(String [] array, int arrayNum) { //This method prints out the merged array
 		String text = null;
 		if(arrayNum == 1) {
-			text = "First";
+			text = "\nFirst";
 		}
 		else if(arrayNum == 2) {
-			text = "Second";
+			text = "\nSecond";
 		}
 		else if(arrayNum == 3) {
-			text = "Merged";
+			text = "\nMerged";
 		}
 		else {
 			System.out.println("ERROR - arrayNum not 1 or 2 or 3");
