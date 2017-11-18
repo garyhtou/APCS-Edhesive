@@ -24,10 +24,11 @@ class Lesson_34_Activity_Two {
    public static double average(int [] a)
     {
 	   int sum = 0;
+	   double aLength = a.length;
 	   for(int i = 0; i < a.length; i++) {
 		   sum+=a[i];
 	   }
-	   double average = sum/a.length;
+	   double average = sum/aLength;
      return average; 
     }
     
