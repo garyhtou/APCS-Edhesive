@@ -133,10 +133,11 @@ public class Names_Merge_6 {
 				break;
 			}
 			else {
+				//FIXME: string index out of range: 1
 				array[i] = array[i].trim();
-				String upper = array[i].toUpperCase();
-				String lower = array[i].toLowerCase();
-				String name = upper.substring(0, 1) + lower.substring(1);
+				String firstLetter = (array[i].substring(0, 1)).toUpperCase();
+				String restLetters = (array[i].substring(1)).toLowerCase();
+				String name = firstLetter+restLetters;
 				array[i] = name;
 			}
 		}
