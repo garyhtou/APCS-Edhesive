@@ -82,9 +82,9 @@ public class Names_Merge_6 {
 	
 //ARRAY ENTRY
 	public static void arrayEntry() {
-		String[] arrayOne = entryArray(1);
-		String[] arrayTwo = entryArray(2);
-		merge(arrayOne, arrayTwo);
+		//String[] arrayOne = entryArray(1);
+		//String[] arrayTwo = entryArray(2);
+		merge(entryArray(1), entryArray(2));
 	}
 	
 //ENTRYCODE
@@ -103,29 +103,32 @@ public class Names_Merge_6 {
 		
 		
 		System.out.println("Enter the values for the " + text + " array, up to 10000 values, enter 'End' to quit");
-		scan.next(); //tired using this to fix the next line program, doesn't work
+		//scan.next(); //tired using this to fix the next line problem, doesn't work
 		while(continue_entry) {
 		    //FIXME: not working, Edhesive isn't showing a nextLine
-			String entry = "";
-		    if(scan.hasNextLine()){
-			    entry = scan.nextLine(); //scans for name
-		    }
+		    //if(scan.hasNextLine()){
+			    String entry = scan.nextLine(); //scans for name
+			    //System.out.println(entry);
+		    //}
 		    //
 		    
-			if(entry.toUpperCase().compareTo("END")==0) { //If entry is less than last entry or if is "END"
+			if((entry.toUpperCase().compareTo("END")==0)) { //If entry is less than last entry or if is "END"
 				continue_entry = false;
 			}
-			else {
+			else if (entry != null){
 				array[elementNum] = entry; //sets entry to it's element in the array
+				elementNum++;
 				
 				if(entry.compareTo(last_entry)<0) {
 					incorrectOrder = true;
 				}
 
 				last_entry = entry;
-				elementNum++;
+				
 			}
 		}
+		if(arrayNum == 1)
+			System.out.println();
 		
 		//correct case, HEy -> Hey
 		for(int i = 0; i < array.length; i++) {
@@ -185,7 +188,7 @@ public class Names_Merge_6 {
 		print(arrayOne, 1);
 		print(arrayTwo, 2);
 		print(mergedArray, 3);
-		System.out.print("\n\n" + (incorrectOrder ? "Error: Arrays not in correct order" : ""));
+		System.out.print("\n" + (incorrectOrder ? "Error: Arrays not in correct order" : ""));
 	}
 	
 	
@@ -193,13 +196,13 @@ public class Names_Merge_6 {
 	public static void print(String [] array, int arrayNum) { //This method prints out the merged array
 		String text = null;
 		if(arrayNum == 1) {
-			text = "\nFirst";
+			text = "First";
 		}
 		else if(arrayNum == 2) {
-			text = "\nSecond";
+			text = "Second";
 		}
 		else if(arrayNum == 3) {
-			text = "\nMerged";
+			text = "Merged";
 		}
 		else {
 			System.out.println("ERROR - arrayNum not 1 or 2 or 3");
@@ -215,6 +218,7 @@ public class Names_Merge_6 {
 					System.out.print(array[i] + " "); //prints element with one space at the end
 			}
 		}
+		System.out.println();
 	}
 
 }
