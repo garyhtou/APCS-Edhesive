@@ -149,6 +149,10 @@ public class Names_Merge_6 {
 	
 //MERGE
 	public static void merge(String [] arrayOne, String [] arrayTwo) {
+		String[] mergedArray = new String[20000];
+		
+	}
+	/*public static void merge(String [] arrayOne, String [] arrayTwo) {
 		String[] mergedArray = new String[20000]; //20,000 because if arrayOne has 10,000 and arrayTwo has 10,000.  Combined will be 20,000
 		int elementNumOne = 0;
 		int elementNumTwo = 0;
@@ -189,7 +193,7 @@ public class Names_Merge_6 {
 		print(arrayTwo, 2);
 		print(mergedArray, 3);
 		System.out.print("\n" + (incorrectOrder ? "Error: Arrays not in correct order" : ""));
-	}
+	}*/
 	
 	
 //PRINT
