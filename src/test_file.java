@@ -2,16 +2,15 @@
 public class test_file {
 
 	public static void main(String[] args) {
-		mystery(2, 5);
+		whatsItDo("WATCH");
 	}
-	public static int mystery(int a, int b) {
-	    System.out.println(a + " " + b);
-
-	    if (a > b)
-	        return mystery(a, Math.abs(b) + 1);
-	    else if (b > a)
-	        return mystery(Math.abs(a) + 1, b);
-
-	    return 1;
+	public static void whatsItDo(String str) {
+		int len = str.length();
+		if (len > 1) {
+			String temp = str.substring(0, len-1);
+			//System.out.println(temp);
+			whatsItDo(temp);
+			System.out.println(temp);
+		}
 	}
 }
