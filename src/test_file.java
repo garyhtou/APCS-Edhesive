@@ -2,15 +2,9 @@
 public class test_file {
 
 	public static void main(String[] args) {
-		whatsItDo("WATCH");
+		System.out.println(test());
 	}
-	public static void whatsItDo(String str) {
-		int len = str.length();
-		if (len > 1) {
-			String temp = str.substring(0, len-1);
-			//System.out.println(temp);
-			whatsItDo(temp);
-			System.out.println(temp);
-		}
+	public static int[] test() {
+		return new int[]{1,2};
 	}
 }
