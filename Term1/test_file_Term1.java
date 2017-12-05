@@ -1,5 +1,5 @@
 
-public class test_file {
+public class test_file_Term1 {
 
 	public static void main(String[] args) {
 		whatsItDo("WATCH");
