@@ -2,7 +2,7 @@ package _Interfaces;
 
 import java.util.*;
 
-public interface debug {
+public interface IDebug {
 	/**
 	 * println a String
 	 * @param string String to be printed
