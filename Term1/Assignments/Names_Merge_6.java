@@ -72,7 +72,6 @@ Error: Arrays not in correct order
 
 public class Names_Merge_6 {
 
-	Scanner scan = new Scanner (System.in);
 	static boolean incorrectOrder;
 	
 //MAIN
@@ -103,6 +102,7 @@ public class Names_Merge_6 {
 		
 		
 		System.out.println("Enter the values for the " + text + " array, up to 10000 values, enter 'End' to quit");
+		Scanner scan = new Scanner (System.in);
 		//scan.next(); //tired using this to fix the next line problem, doesn't work
 		while(continue_entry) {
 		    //FIXME: not working, Edhesive isn't showing a nextLine
