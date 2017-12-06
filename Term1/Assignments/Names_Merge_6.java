@@ -72,7 +72,7 @@ Error: Arrays not in correct order
 
 public class Names_Merge_6 {
 
-	static Scanner scan = new Scanner (System.in);
+	Scanner scan = new Scanner (System.in);
 	static boolean incorrectOrder;
 	
 //MAIN
