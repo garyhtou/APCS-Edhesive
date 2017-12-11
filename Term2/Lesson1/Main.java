@@ -34,10 +34,10 @@ class Main {
     	
     	System.out.println("Please enter words, enter STOP to stop the loop.");
     	
-    	input = scan.nextLine();
+    	//input = scan.nextLine();
     	while(true) {
     		input = scan.nextLine();
-    		if(input.equalsIgnoreCase("STOP")) {
+    		if(input.equals("STOP")) {
     			break;
     		}
     		else {
