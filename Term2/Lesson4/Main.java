@@ -50,16 +50,22 @@ Sample Run
 
 import java.lang.Math;
 
-class Main{
+class Main {
 	public static void main(String[] args) {
 		Vehicle v = new Vehicle(5);
 		System.out.print(v);
 	}
 }
 
-class Vehicle{
+class Vehicle {
 	//Constants
-	private final int BLOCKS_TIL_POSITIVE = 20;
+	/**
+	 * 20
+	 */
+	private final int BLOCKS_TIL_CENTER = 20;
+	/**
+	 * @
+	 */
 	private final String VEHICLE_SYMBOL = "@";
 	//Vars
 	private int location;
@@ -75,8 +81,11 @@ class Vehicle{
 		else if(loc<20) {
 			location = -20;
 		}
-		else {
+		else if(loc == 0){
 			location = loc;
+		}
+		else {
+			location = 0;
 		}
 	}
 	public void forward() {
@@ -98,15 +107,16 @@ class Vehicle{
 		int loc = getLocation();
 		int blocks = 0;
 		
-		if(loc < 0) {
-			blocks = Math.abs(loc);
+		if(loc < 0) { //if negative
+			blocks = BLOCKS_TIL_CENTER + loc;
 		}
-		else if(loc > 0) {
-			blocks = Math.abs(loc) + BLOCKS_TIL_POSITIVE;
+		else if(loc > 0) { //if positive
+			blocks = BLOCKS_TIL_CENTER + Math.abs(loc);
 		}
-		else {
-			blocks = BLOCKS_TIL_POSITIVE;
+		else { //zero
+			blocks = BLOCKS_TIL_CENTER;
 		}
+		
 		
 		String spaces = "";
 		for(int i = 1; i <= blocks; i++) {

@@ -1,6 +1,7 @@
-import _Interfaces.IC_General;
+package test;
+import _Interfaces.IGeneral;
 
-public class java_test{
+public class java_test implements IGeneral{
 
 	public static void main(String[] args) {
 		
