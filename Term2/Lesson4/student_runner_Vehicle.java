@@ -20,7 +20,7 @@ public class student_runner_Vehicle {
            }
            System.out.println(v1.getLocation());
       
-           for (int i = 1 ; i < 10; i ++)
+           /*for (int i = 1 ; i < 10; i ++)
            {
                 int d = (int)(Math.random() *2);
                 if (d ==0)
@@ -30,7 +30,7 @@ public class student_runner_Vehicle {
                System.out.println(v1);
                 
                
-           }
+           }*/
       
            Vehicle v2 = new Vehicle (87);
            System.out.println(v2.getLocation());
