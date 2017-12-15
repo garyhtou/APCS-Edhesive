@@ -78,13 +78,6 @@ public class Names_Merge_6_ArrayList {
 	
 //MAIN
 	public static void main(String[] args) {
-		arrayEntry();
-	}
-	
-//ARRAY ENTRY
-	public static void arrayEntry() {
-		//String[] arrayOne = entryArray(1);
-		//String[] arrayTwo = entryArray(2);
 		merge(entryArray(1), entryArray(2));
 	}
 	
@@ -149,6 +142,8 @@ public class Names_Merge_6_ArrayList {
 		}
 		
 		Collections.sort(mergedArray);
+		Collections.sort(arrayOne);
+		Collections.sort(arrayTwo);
 		
 		print(arrayOne, 1);
 		print(arrayTwo, 2);
@@ -156,49 +151,6 @@ public class Names_Merge_6_ArrayList {
 		System.out.print("\n" + (incorrectOrder ? "Error: Arrays not in correct order" : ""));
 		
 	}
-	/*public static void merge(String [] arrayOne, String [] arrayTwo) {
-		String[] mergedArray = new String[20000]; //20,000 because if arrayOne has 10,000 and arrayTwo has 10,000.  Combined will be 20,000
-		int elementNumOne = 0;
-		int elementNumTwo = 0;
-		int elementNumMerged = 0;
-		
-		//TODO review how compareTo works, does it compare this to var to var to this
-		while(elementNumOne<=10000 && elementNumTwo<=10000) {
-			if((arrayOne[elementNumOne] == null) && (arrayTwo[elementNumTwo] == null)) {
-				break;
-			}
-			else {
-				if((arrayOne[elementNumOne] != null) && (arrayTwo[elementNumTwo] != null)) {
-					if(arrayOne[elementNumOne].compareTo(arrayTwo[elementNumTwo])<=0) {
-						mergedArray[elementNumMerged] = arrayOne[elementNumOne];
-						elementNumMerged++;
-						elementNumOne++;
-					}
-					else{
-						mergedArray[elementNumMerged] = arrayTwo[elementNumTwo];
-						elementNumMerged++;
-						elementNumTwo++;
-					}
-				}
-				else if((arrayOne[elementNumOne] == null) && (arrayTwo[elementNumTwo] != null)) {
-					mergedArray[elementNumMerged] = arrayTwo[elementNumTwo];
-					elementNumMerged++;
-					elementNumTwo++;
-				}
-				else {
-					mergedArray[elementNumMerged] = arrayOne[elementNumOne];
-					elementNumMerged++;
-					elementNumOne++;
-				}
-			}
-		}
-		
-		print(arrayOne, 1);
-		print(arrayTwo, 2);
-		print(mergedArray, 3);
-		System.out.print("\n" + (incorrectOrder ? "Error: Arrays not in correct order" : ""));
-	}*/
-	
 	
 //PRINT
 	public static void print(ArrayList array, int arrayNum) { //This method prints out the merged array
