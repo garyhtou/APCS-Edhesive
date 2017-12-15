@@ -141,12 +141,9 @@ public class Names_Merge_6_ArrayList {
 	}
 	
 //MERGE
-	public static void merge(ArrayList arrayOne, ArrayList arrayTwo) {
-		ArrayList mergedArray = new ArrayList();
+	public static void merge(ArrayList<String> arrayOne, ArrayList<String> arrayTwo) {
+		ArrayList<String> mergedArray = new ArrayList<String>(arrayOne);
 		
-		for(int i = 0; i < arrayOne.size(); i++) {
-			mergedArray.add(arrayOne.get(i));
-		}
 		for(int i = 0; i < arrayTwo.size(); i++) {
 			mergedArray.add(arrayTwo.get(i));
 		}
