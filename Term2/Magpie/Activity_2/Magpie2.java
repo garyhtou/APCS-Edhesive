@@ -1,4 +1,4 @@
-package Magpie;
+package Magpie.Activity_2;
 
 import java.text.SimpleDateFormat;
 import java.util.*;

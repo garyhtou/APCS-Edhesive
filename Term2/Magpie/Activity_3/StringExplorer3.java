@@ -1,4 +1,4 @@
-package Magpie;
+package Magpie.Activity_3;
 /**
  * A program to allow students to try out different 
  * String methods. 

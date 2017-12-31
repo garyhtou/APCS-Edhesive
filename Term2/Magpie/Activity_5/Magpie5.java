@@ -1,4 +1,4 @@
-package Magpie;
+package Magpie.Activity_5;
 import java.util.Random;
 
 /**
