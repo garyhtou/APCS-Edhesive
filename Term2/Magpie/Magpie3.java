@@ -1,4 +1,9 @@
 package Magpie;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+
 /**
  * A program to carry on conversations with a human user.
  * This version: 
@@ -46,6 +51,19 @@ public class Magpie3
 		{
 			response = "Tell me more about your family.";
 		}
+		else if(checkTeacher(statement).get(0).equals("t")){
+			response = checkTeacher(statement).get(1);
+		}
+		else if(findKeyword(statement, "you")>=0 && findKeyword(statement, "?")>=0) {
+			response = "I don't know.";
+		}
+		else if(findKeyword(statement, "the time")>=0 && findKeyword(statement, "?")>=0){
+			response = "The time is " + new SimpleDateFormat("HH:mm:ss").format(new Date());
+		}
+		else if((findKeyword(statement, "follow")>=0 || findKeyword(statement, "add")>=0) &&
+				(statement.contains("social media") || statement.contains("instagram") || statement.contains("facebook") || statement.contains("snapchat") || statement.contains("twitter"))) {
+			response = "Sorry, I don't have any social medias";
+		}
 		else
 		{
 			response = getRandomResponse();
@@ -69,7 +87,7 @@ public class Magpie3
 	 * @return the index of the first occurrence of goal in
 	 *         statement or -1 if it's not found
 	 */
-	private int findKeyword(String statement, String goal,
+	public int findKeyword(String statement, String goal,
 			int startPos)
 	{
 		String phrase = statement.trim();
@@ -133,7 +151,7 @@ public class Magpie3
 	 * @return the index of the first occurrence of goal in
 	 *         statement or -1 if it's not found
 	 */
-	private int findKeyword(String statement, String goal)
+	public int findKeyword(String statement, String goal)
 	{
 		return findKeyword(statement, goal, 0);
 	}
@@ -145,7 +163,7 @@ public class Magpie3
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -166,8 +184,48 @@ public class Magpie3
 		{
 			response = "You don't say.";
 		}
+		else if (whichResponse == 4) {
+			response = "and?...";
+		}
+		else if(whichResponse == 5) {
+			response = "Never knew.";
+		}
 
 		return response;
+	}	
+	
+	/**
+	 * Checks if a String contains a teacher's name
+	 * @param statement
+	 * @return an ArrayList {"f" for false or "t" for true, response}
+	 */
+	private ArrayList<String> checkTeacher(String statement) {
+		//TODO: fix input: "she she she", output: She sounds like a good teacher."
+		final String[] namePronouns = 	{"Mr", 	"Ms", 	"Mrs", 	"Miss", "Dr", 	"Professor"};
+		final String[] genderPronouns = {"He", 	"She", 	"She", 	"She", 	"They", "They"};
+		//boolean[] keepChecking = 		{true, 	true, 	true, 	true, 	true, 	true};
+		String contains = "f"; //false
+		String response = null;
+		for(int i = 0; i < namePronouns.length; i++) {
+			if(findKeyword(statement, namePronouns[i])>=0) {
+				if(response == null) {
+					contains = "t"; //true
+					response = genderPronouns[i] + " sounds like a good teacher.";
+					
+				}
+				else if(findKeyword(statement, "Both")>=0) {
+					response = "They all sound like good teachers.";
+					break;
+				}
+				else{
+					response = "Both of them sound like good teachers.";
+				}
+			}
+		}
+		ArrayList<String> list = new ArrayList<String>();
+		list.add(contains);
+		list.add(response);
+		return list;
 	}
 
 }

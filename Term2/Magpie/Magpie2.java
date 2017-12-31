@@ -1,4 +1,8 @@
 package Magpie;
+
+import java.text.SimpleDateFormat;
+import java.util.*;
+
 /**
  * A program to carry on conversations with a human user.
  * This is the initial version that:  
@@ -31,23 +35,42 @@ public class Magpie2
 	 */
 	public String getResponse(String statement)
 	{
-		String response = "";
-		if (statement.indexOf("no") >= 0)
-		{
-			response = "Why so negative?";
+		if(statement.trim().length() != 0) {
+			String response = "";
+			if (statement.indexOf("no") >= 0)
+			{
+				response = "Why so negative?";
+			}
+			else if (statement.indexOf("mother") >= 0
+					|| statement.indexOf("father") >= 0
+					|| statement.indexOf("sister") >= 0
+					|| statement.indexOf("brother") >= 0)
+			{
+				response = "Tell me more about your family.";
+			}
+			else if(statement.toUpperCase().contains("DOG")||statement.toUpperCase().contains("CAT")) {
+				response = "Tell me more about your pets.";
+			}
+			else if(checkTeacher(statement).get(0).equals("t")){
+				response = checkTeacher(statement).get(1);
+			}
+			else if(statement.contains("you") && statement.contains("?")) {
+				response = "I don't know.";
+			}
+			else if(statement.contains("the time") && statement.contains("?")){
+				response = "The time is " + new SimpleDateFormat("HH:mm:ss").format(new Date());
+			}
+			else if((statement.contains("follow") || statement.contains("add")) &&
+					(statement.contains("social media") || statement.contains("instagram") || statement.contains("facebook") || statement.contains("snapchat") || statement.contains("twitter"))) {
+				response = "Sorry, I don't have any social medias";
+			}
+			else
+			{
+				response = getRandomResponse();
+			}
+			return response;
 		}
-		else if (statement.indexOf("mother") >= 0
-				|| statement.indexOf("father") >= 0
-				|| statement.indexOf("sister") >= 0
-				|| statement.indexOf("brother") >= 0)
-		{
-			response = "Tell me more about your family.";
-		}
-		else
-		{
-			response = getRandomResponse();
-		}
-		return response;
+		return "Say something, please";
 	}
 
 	/**
@@ -56,7 +79,7 @@ public class Magpie2
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -77,7 +100,47 @@ public class Magpie2
 		{
 			response = "You don't say.";
 		}
+		else if (whichResponse == 4) {
+			response = "and?...";
+		}
+		else if(whichResponse == 5) {
+			response = "Never knew.";
+		}
 
 		return response;
+	}
+	
+	/**
+	 * Checks if a String contains a teacher's name
+	 * @param statement
+	 * @return an ArrayList {"f" for false or "t" for true, response}
+	 */
+	private static ArrayList<String> checkTeacher(String statement) {
+		//TODO: fix input: "she she she", output: She sounds like a good teacher."
+		final String[] namePronouns = 	{"Mr", 	"Ms", 	"Mrs", 	"Miss", "Dr", 	"Professor"};
+		final String[] genderPronouns = {"He", 	"She", 	"She", 	"She", 	"They", "They"};
+		//boolean[] keepChecking = 		{true, 	true, 	true, 	true, 	true, 	true};
+		String contains = "f"; //false
+		String response = null;
+		for(int i = 0; i < namePronouns.length; i++) {
+			if(statement.toUpperCase().contains(namePronouns[i].toUpperCase())) {
+				if(response == null) {
+					contains = "t"; //true
+					response = genderPronouns[i] + " sounds like a good teacher.";
+					
+				}
+				else if(response.contains("Both")) {
+					response = "They all sound like good teachers.";
+					break;
+				}
+				else{
+					response = "Both of them sound like good teachers.";
+				}
+			}
+		}
+		ArrayList<String> list = new ArrayList<String>();
+		list.add(contains);
+		list.add(response);
+		return list;
 	}
 }
