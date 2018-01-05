@@ -5,17 +5,112 @@ package Labs.Boxcar;
  * A class which represents a single car on a freight train.
  */
 
+
+
+/*
+For this assignment, you will be writing a class called Boxcar that represents a single car on a freight train. Download the template file, Boxcar.java (Links to an external site.)Links to an external site., as a starting point. Your job is to add code to Boxcar.java so that your implementation meets the requirements specified below. To complete the assignment, replace all the/* missing code*\/ comments in the file with your own code. You do not need to change any other code in the file.
+
+In previous assignments, we had a requirement that your class be named Main. In this assignment, the class is required to be named Boxcar.
+
+Boxcar.java includes a main method that will help test your code. In order to fully test the Boxcar class, you will need to add more test cases to the main method. At a minimum, run the main to make sure your implementation output matches the sample run listed below. We will test your code using our own main method that is similar to the one provided.
+
+When you are done coding and testing, copy and paste your entire Boxcar class (including the main method) into the Code Runner and press "Submit" in order for your assignment to count as turned in.
+
+Variables
+
+String cargo - Represents the type of cargo carried by the boxcar, with possible values of "gizmos", "gadgets", "widgets" and "wadgets". No other cargo types are allowed.
+int numUnits - Represents the number of units carried by the boxcar. Must be between 0 and 10 inclusive.
+boolean repair - Represents whether the boxcar is in repair or in service. Set to true if the boxcar is in repair. If the boxcar is in repair, numUnits must be 0.
+Methods
+
+Boxcar() - Default constructor that sets the boxcar to “gizmos”, 5 units, and in service (not in repair).
+Boxcar(String c, int u, boolean r) - This constructor sets the cargo variable to the parameter c, but only if c is "gizmos", "gadgets", "widgets", or "wadgets". The constructor ignores the case of the value in c. If c holds any value other than "gizmos", "gadgets", "widgets", or "wadgets", the constructor sets cargo to "gizmos". The numUnits variable is set to the parameter u. If u is less than 0 or higher than the maximum capacity of 10 units, numUnits is set to 0. The repair variable is set to the parameter r. If repair is true, numUnits is set to 0 no matter what value is stored in the u parameter.
+String toString () - returns a String with the Boxcar in the format:
+5 gizmos	in service    
+10 widgets	in service
+0 gadgets	in repair
+Notice there is one space in between the number of units and the cargo and a tab between the value for cargo and "in repair"/"in service”
+
+void loadCargo() - This method adds 1 to the number of units in the BoxCar. The maximum capacity of a boxcar is 10 units. If increasing the number of units would go beyond the maximum, keep numUnits at the max capacity. If the repair variable is true, then numUnits may only be set to 0.
+String getCargo() - This method returns the cargo type of the boxcar.
+void setCargo(String c) - The cargo variable is set to c only if c is "gizmos", "gadgets", "widgets", or "wadgets", ignoring case. The value stored for cargo should be lowercase. If c holds any value other than  "gizmos", "gadgets", "widgets", or "wadgets" (ignoring case), the method sets the cargo to "gizmos".
+boolean isFull() - The isFull method returns true if numUnits is equal to 10, false otherwise.
+void callForRepair() - Sets repair to true. Recall that if the repair variable is true, then the numUnits variable may only be set to 0.
+Sample Run
+
+1. Test Boxcar()
+*** PASS: cargo is set correctly (gizmos)
+*** PASS: numUnits is set correctly (5)
+*** PASS: repair is set correctly (false)
+*** PASS: toString produced the correct output (5 gizmos	in service)
+
+2. Test Boxcar(String c, int u, boolean r)
+*** PASS: cargo is set correctly (gadgets)
+*** PASS: numUnits is set correctly (0)
+*** PASS: repair is set correctly (true)
+*** PASS: toString produced the correct output (0 gadgets	in repair)
+
+3. Test callForRepair()
+*** PASS: cargo is set correctly (gizmos)
+*** PASS: numUnits is set correctly (0)
+*** PASS: repair is set correctly (true)
+*** PASS: toString produced the correct output (0 gizmos	in repair)
+
+4. Test loadCargo()
+car3 holds 5 units.
+*** PASS: cargo is set correctly (gizmos)
+*** PASS: numUnits is set correctly (5)
+*** PASS: repair is set correctly (false)
+*** PASS: toString produced the correct output (5 gizmos	in service)
+now car3 should hold 6 units.
+*** PASS: cargo is set correctly (gizmos)
+*** PASS: numUnits is set correctly (6)
+*** PASS: repair is set correctly (false)
+*** PASS: toString produced the correct output (6 gizmos	in service)
+now car3 should hold 10 units.
+*** PASS: cargo is set correctly (gizmos)
+*** PASS: numUnits is set correctly (10)
+*** PASS: repair is set correctly (false)
+*** PASS: toString produced the correct output (10 gizmos	in service)
+car1 is in repair, so we can't load cargo
+*** PASS: cargo is set correctly (gizmos)
+*** PASS: numUnits is set correctly (0)
+*** PASS: repair is set correctly (true)
+*** PASS: toString produced the correct output (0 gizmos	in repair)
+
+5. Test isFull()
+*** PASS: isFull() working properly
+*** PASS: isFull() working properly
+
+6. Test getCargo()
+*** PASS: getCargo() working properly
+
+7. Test setCargo(String)
+*** PASS: cargo is set correctly (gadgets)
+*** PASS: cargo is set correctly (widgets)
+*** PASS: cargo is set correctly (wadgets)
+*** PASS: cargo is set correctly (gizmos)
+*/
+
+
+
+
+
+
+
 public class Boxcar
 {
     // Variables that will be initialized in the Boxcar constructors.
-    private String cargo = "";
-    private int numUnits;
-    private boolean repair;
+    private String cargo = ""; //"gizmos", "gadgets", "widgets" and "wadgets". No other cargo types are allowed.
+    private int numUnits; //Must be between 0 and 10, inclusive
+    private boolean repair; //in repair/service?    If true, numUnits must be 0
     
     // Default constructor that sets the boxcar to "gizmos", 5, and false.
     public Boxcar()
     {
-        /* missing code */
+        cargo = "gizmos";
+        numUnits = 5;
+        repair = false;
     }
     
     
@@ -29,7 +124,32 @@ public class Boxcar
     // no matter what value is stored in the u parameter.
     public Boxcar(String c, int u, boolean r)
     {
-        /* missing code */
+        //cargo
+    	if(c.equalsIgnoreCase("gizmos") ||
+    	   c.equalsIgnoreCase("gadgets") ||
+    	   c.equalsIgnoreCase("widgets") ||
+    	   c.equalsIgnoreCase("wadgets"))
+    	{
+    		cargo = c;
+    	}
+    	else {
+    		cargo = "gizmos";
+    	}
+        
+        //numUnits
+        if(u >= 0 && u <= 10) {
+        	numUnits = u;
+        }
+        else {
+        	numUnits = 0;
+        }
+        
+        //repair
+        if(repair) {
+        	//TODO: START HERE
+        }
+        
+        
     }
     
     // The toString method returns a String with the Boxcar in the format:
