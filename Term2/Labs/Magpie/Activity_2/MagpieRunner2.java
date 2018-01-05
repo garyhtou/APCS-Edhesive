@@ -1,4 +1,4 @@
-package Magpie.Activity_5;
+package Labs.Magpie.Activity_2;
 import java.util.Scanner;
 
 /**
@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @author Laurie White
  * @version April 2012
  */
-public class MagpieRunner5
+public class MagpieRunner2
 {
 
 	/**
@@ -14,7 +14,7 @@ public class MagpieRunner5
 	 */
 	public static void main(String[] args)
 	{
-		Magpie5 maggie = new Magpie5();
+		Magpie2 maggie = new Magpie2();
 		
 		System.out.println (maggie.getGreeting());
 		Scanner in = new Scanner (System.in);
