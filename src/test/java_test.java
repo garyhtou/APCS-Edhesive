@@ -1,7 +1,7 @@
 package test;
 import java.util.ArrayList;
 
-import _Interfaces.IGeneral;
+import interfaces.IGeneral;
 
 public class java_test implements IGeneral{
 
