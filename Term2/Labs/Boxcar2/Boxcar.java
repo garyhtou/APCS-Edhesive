@@ -1,4 +1,4 @@
-package Labs.Boxcar;
+package Labs.Boxcar2;
 /*
  * AP CS MOOC
  * Term 2 - Assignment 2, Part 1: Boxcar
