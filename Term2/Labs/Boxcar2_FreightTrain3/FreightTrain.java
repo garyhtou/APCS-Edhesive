@@ -100,8 +100,15 @@ public class FreightTrain
     public String toString()
     {
         String print = "";
+        int total = train.size();
+        int counter = 1;
     	for(Boxcar b: train) {
-        	print += b.toString() + "\n";
+    		if(counter < total) {
+    			print += b.toString() + "\n";
+    		}
+    		else {
+    			print += b.toString();
+    		}
         }
         return print;
     }
@@ -154,8 +161,7 @@ public class FreightTrain
     // This method sets the Boxcar at location iâ€™s repair variable to true.
     public void callForRepair(int i)
     {
-        Boxcar b = train.get(i);
-        b.callForRepair();
+        train.get(i).callForRepair();
     }
     
     public static void main(String[] args)
@@ -229,7 +235,7 @@ public class FreightTrain
         success = true;
         for (Boxcar car: trainWithFiveCars.train)
         {
-            if (!car.getCargo().equals("gadget"))
+            if (!car.getCargo().equals("gadgets")) //FIXME: TYPO, was "gadget"
                 success = false;
         }
         if (trainWithFiveCars.train.size() > 0 && success)
