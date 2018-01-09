@@ -1,4 +1,4 @@
-package Labs.Boxcar2_FreightTrain3;
+package Assignment;
 /*
  * AP CS MOOC
  * Term 2 - Assignment 2, Part 2: FreightTrain
@@ -21,14 +21,14 @@ ArrayList<Boxcar> train - An ArrayList that stores a train with boxcars.
 Methods
 
 FreightTrain() - Default constructor that sets train to an ArrayList holding one boxcar containing 5 gizmos, that is not in repair.
-FreightTrain(int n) - A constructor that sets train to an ArrayList of size n, holding n boxcars each containing 5 gizmos and not in repair. If n ≤ 0, then the train should be set to size one, with a single boxcar holding 5 gizmos and not in repair.
+FreightTrain(int n) - A constructor that sets train to an ArrayList of size n, holding n boxcars each containing 5 gizmos and not in repair. If n â‰¤ 0, then the train should be set to size one, with a single boxcar holding 5 gizmos and not in repair.
 String toString() - This method returns a String representation of the Boxcar objects in the train, one per line. For example:
 3 gadgets	in service
 2 wadgets	in service
 0 gizmos	in repair
 7 gadgets	in service
 0 gadgets	in repair
-void setCargo(String c) - This method sets the cargo type of all the boxcars in the entire train. The cargo variable is set to c only if c is "gizmos", "gadgets", “widgets”, or “wadgets”. It should ignore the case of the value in c. If c holds any value other than "gizmos", "gadgets", “widgets”, or “wadgets”, cargo will be set to "gizmos".
+void setCargo(String c) - This method sets the cargo type of all the boxcars in the entire train. The cargo variable is set to c only if c is "gizmos", "gadgets", â€œwidgetsâ€�, or â€œwadgetsâ€�. It should ignore the case of the value in c. If c holds any value other than "gizmos", "gadgets", â€œwidgetsâ€�, or â€œwadgetsâ€�, cargo will be set to "gizmos".
 void setMultiCargo() - This method sets the boxcars to the alternating pattern "gizmos", "gadgets", "widgets", "wadgets", "gizmos", "gadgets", "widgets", "wadgets", ... until the end of the train.
 void fillTrain() - This method fills all boxcars in the train to the maximum capacity of 10.
 void callForRepair(int i) - This method sets the repair variable of the Boxcar at location i to true.
@@ -158,7 +158,7 @@ public class FreightTrain
         }
     }
     
-    // This method sets the Boxcar at location iâ€™s repair variable to true.
+    // This method sets the Boxcar at location iÃ¢â‚¬â„¢s repair variable to true.
     public void callForRepair(int i)
     {
         train.get(i).callForRepair();
