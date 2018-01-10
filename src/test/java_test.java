@@ -14,6 +14,6 @@ public class java_test implements IGeneral{
 		int INDEX = 1;
 		String VALUE_REMOVED = "hi";
 		
-		list.add(INDEX, VALUE_REMOVED);		
+		list.add(INDEX, VALUE_REMOVED);
 	}
 }
