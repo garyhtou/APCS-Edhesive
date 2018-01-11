@@ -16,8 +16,9 @@ class t2_lesson08_template{
        
        System.out.println("Perimeter: \t" + q.getPerimeter());
           
-          
-
+       -----------------
+       WATCH THE VIDEO!!   
+       -----------------
      }
 
 }
