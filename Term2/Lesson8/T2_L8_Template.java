@@ -1,3 +1,4 @@
+package Lesson8;
 /*
  * Lesson 8 - Unit 5 - Advanced Classes - Inheritance Overriding Methods
  */
@@ -15,10 +16,6 @@ class t2_lesson08_template{
        Quadrilateral q = new Quadrilateral (3, 7, 6, 7);
        
        System.out.println("Perimeter: \t" + q.getPerimeter());
-          
-       -----------------
-       WATCH THE VIDEO!!   
-       -----------------
      }
 
 }
