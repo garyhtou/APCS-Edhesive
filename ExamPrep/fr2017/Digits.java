@@ -13,7 +13,7 @@ public class Digits {
 	public Digits(int num) {
 		int length = Integer.toString(num).length();
 		for(int i = 0; i < length; i++) {
-			digitList.add(num%10);
+			digitList.add(0, num%10);
 			num/=10;
 		}
 		System.out.print(num);
@@ -21,7 +21,6 @@ public class Digits {
 	
 	public boolean isStriclyIncreasing() {
 		return false;
-		
 	}
 	
 	
