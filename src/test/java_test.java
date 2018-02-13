@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 import interfaces.IGeneral;
 
-public class java_test implements IGeneral{
+public class java_test {
 
 	public static void main(String[] args) {
 		int[] a = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
@@ -30,4 +30,10 @@ public class java_test implements IGeneral{
   		Tests if all values in the array are equal. 
 		Tests if the array is in descending order. 
 	  */
+	 
+	 
+	 
+	 
+	 //quiz 3 toobox quesitons
+	 
 }
