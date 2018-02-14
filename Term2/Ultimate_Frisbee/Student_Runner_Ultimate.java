@@ -12,10 +12,10 @@ public class Student_Runner_Ultimate {
         UltimatePlayer player = new UltimatePlayer("Mary", "Smith", "cutter");
         System.out.println("Printing player:\n" + player + "\n");
         
-        UltimatePlayer player1 = new UltimatePlayer("Mary", "Smith", "cutter");
+        UltimatePlayer player1 = new UltimatePlayer("Mary", "Smith", "s");
         System.out.println("Printing player:\n" + player1 + "\n");
         
-        UltimatePlayer player2 = new UltimatePlayer("Mary", "Smith", "cutter");
+        UltimatePlayer player2 = new UltimatePlayer("Mary", "Smith", "handler");
         System.out.println("Printing player:\n" + player2 + "\n");
 
        /* Captain captain = new Captain("Henry", "Tully", "handler", true);
