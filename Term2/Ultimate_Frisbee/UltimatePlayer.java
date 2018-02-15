@@ -3,8 +3,8 @@ package Ultimate_Frisbee;
 public class UltimatePlayer extends Person {
 	
 	static int jerseyNumber = 0;
-	int myJerseyNum;
-	static String pos;
+	private int myJerseyNum;
+	private String pos;
 	
 	
 	public UltimatePlayer(String firstName, String lastName, String position) {

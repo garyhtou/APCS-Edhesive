@@ -2,8 +2,8 @@ package Ultimate_Frisbee;
 
 public class Person {
 	
-	static String fName = "";
-	static String lName = "";
+	private String fName = "";
+	private String lName = "";
 	
 	public Person() {};
 	public Person(String firstName, String lastName) {
