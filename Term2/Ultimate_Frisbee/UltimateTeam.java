@@ -34,7 +34,7 @@ public class UltimateTeam {
 			output += c.toString() + "\n";
 		}
 		
-		output += "PLAYERS\n";
+		output += "\nPLAYERS\n";
 		for(UltimatePlayer p : playersList) {
 			output += p.toString() + "\n";
 		}
