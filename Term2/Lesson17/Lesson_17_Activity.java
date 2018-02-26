@@ -13,7 +13,7 @@ public class Lesson_17_Activity {
 	public static void main(String[] args) {
 		int[] a = new int[] {1, 5, 2, 57, 23, 5, 68, 23, 7, 2, 5, -347};
 		int[] b = new int[] {-246, 1, 4, 6, 8, 10, 346};
-		System.out.println(binarySearch(a, 8));
+		System.out.println(binarySearch(b, 8));
 	}
 
 	public static boolean isSorted(int [] a) {
