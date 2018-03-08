@@ -122,12 +122,14 @@ public class Main {
 		//print
 		System.out.println("Player 1 Total: $" + oneTotal);
 		for(PrizeCard card : playerOne) {
-			System.out.println(card);
+			System.out.println(card.toString());
 		}
+		System.out.println();
 		System.out.println("Player 2 Total: $" + twoTotal);
 		for(PrizeCard card : playerTwo) {
-			System.out.println(card);
+			System.out.println(card.toString());
 		}
+		System.out.println("\n" + (oneTotal>twoTotal ? "Player 1 won by $" + (oneTotal-twoTotal) + "!" : "Player 2 won by $" + (twoTotal-oneTotal) + "!"));
 	}
 	
 	/**
