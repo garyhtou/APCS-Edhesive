@@ -2,7 +2,7 @@ package Lesson20;
 
 import java.util.Arrays;
 
-public class Lesson30Template {
+public class Lesson20Template {
 
 	final static int numStudents = 10;
 	final static int numTests = 5;
