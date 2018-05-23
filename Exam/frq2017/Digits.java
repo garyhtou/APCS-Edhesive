@@ -1,4 +1,4 @@
-package fr2017;
+package frq2017;
 
 import java.util.ArrayList;
 
