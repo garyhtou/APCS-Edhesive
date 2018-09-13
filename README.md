@@ -1,3 +1,4 @@
+
 # APCS Edhesive
 Hello! My name is Gary Tou, a student who took the Edhesive AP Computer Science Course in 2017-2018. As of September 2018, I had decided to remove my solutions due to the increase attention this repository has been recieving. I hope you would learn how to solve them yourself!
 
@@ -12,4 +13,5 @@ If you every have any questions about Java or programming in general, feel free 
 
 Good luck on the AP Exam,
 Gary Tou
+
 

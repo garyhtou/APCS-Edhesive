@@ -1,0 +1,103 @@
+GARY TOU - 6th Period
+May 28th, 2018
+---------------------
+
+//QUESTION 1
+//a
+public boolean simulate(){
+	int distance = 0;
+	for(int i = 0; i < maxHops; i++){
+		distance += hopeDistance();
+		if(distance < 0){
+			return false;
+		} else if(distance >= goalDistance){
+			return true;
+		}
+	}
+	return false;
+}
+
+//b
+public double runSimulation(int num){
+	int wins = 0;
+	for(int i = 0; i < num; i++){
+		if(simulate()){
+			wins++;
+		}
+	}
+	return (double)wins/num;
+}
+
+//QUESTION 2
+//a
+/**
+* constructor
+*/
+public WordPairList(String[] words){
+	for(int i = 0; i < words.length-1; i++){
+		for(int k = i+1; k < words.length; k++){
+			allPairs.add(new WordPair(words[i], words[k]);
+		}
+	}
+}
+//b
+public int numMatches(){
+	int matches = 0;
+	for(wordPair p : allPairs){
+		if(p.getFirst().equals(p.getSecond())){
+			matches++;
+		}
+	}
+	return matches;
+}
+
+//QUESTION 3
+//a
+public class CodeWordChecker impliments StringChecker{
+	int start;
+	int end;
+	String value;
+	
+	public CodeWordChecker(String value){
+		StringChecker(6, 20, value);
+	}
+	public CodeWordChecker(int start, int end, String value){
+		this.start = start;
+		this.end = end;
+		this.value = value;
+	}
+	boolean isValid(String str){
+		if(str.length > end || str.length < start){
+			return false;
+		} else if (str.contains(value)){
+			return false;
+		}
+		return true;
+	}
+}
+
+//QUESTION 4
+//a
+public static int[] getColumn(int[][] arr2D, int c){
+	int[] arr = new int[arr2D.length];
+	
+	for(int i = 0; i < arr2D.length; i++){
+		arr[i] = arr2D[i][c];
+	}
+}
+//b
+public static boolean isLatin(int[][] square(){
+	if(containsDuplicates(square[0])){
+		return false;
+	}
+	for(int i = 0; i < square.length; i++){
+		if(! hasAllValues(square[0], square[i])){
+		return false;
+	}
+	for(int i = 0; i < square.length[0]; i++){
+		if(! hasAllValues(square[0], getColumn[i])){
+		return false;
+	}
+	return true;
+}
+	
